@@ -64,7 +64,7 @@ function startButton(){
 
 //generates stop button
 function generateStopButton(){
-  document.querySelector('.js-button-holder').innerHTML=`<button class="js-stop-button">Stop</button>`;
+  document.querySelector('.js-button-holder').innerHTML=`<button class="js-stop-button stop-button">Stop</button>`;
   document.querySelector('.js-stop-button').addEventListener('click',()=>{
     stopApp(); //stops app
     generateResumeButton(); //generates reset button and swaps stop for resume button
@@ -75,8 +75,8 @@ function generateStopButton(){
 //generates resume(insted of stop) and reset
 function generateResumeButton(){
 
-  document.querySelector('.js-button-holder').innerHTML=`<button class="js-resume-button">Resume</button>`;
-  document.querySelector('.js-reset-holder').innerHTML=`<button class="js-reset-button">Reset</button>`;
+  document.querySelector('.js-button-holder').innerHTML=`<button class="js-resume-button resume-button">Resume</button>`;
+  document.querySelector('.js-reset-holder').innerHTML=`<button class="js-reset-button reset-button">Reset</button>`;
 
   //resume eventListener
   document.querySelector('.js-resume-button').addEventListener('click',()=>{
@@ -89,7 +89,7 @@ function generateResumeButton(){
   document.querySelector('.js-reset-button').addEventListener('click',()=>{
     resetApp(); // resets timer
     stopApp(); //stops timer
-    document.querySelector('.js-button-holder').innerHTML=`<button class="js-start-button">Start</button>`; // goes back to start (generates start button)
+    document.querySelector('.js-button-holder').innerHTML=`<button class="js-start-button start-button">Start</button>`; // goes back to start (generates start button)
     document.querySelector('.js-reset-holder').innerHTML=''; // removes itself
     startButton();
   });

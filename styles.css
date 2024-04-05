@@ -1,0 +1,37 @@
+body{
+  background-color: #1f2223;
+  color: white;
+}
+.center-screen{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.js-DisplayStopwatch{
+  text-align: center;
+}
+.start-button,
+.resume-button,
+.reset-button,
+.stop-button
+{
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 25px;
+}
+
+.start-button{
+  background-color: #4682B4;
+}
+.stop-button{
+ background-color: #7b1113;
+}
+.resume-button{
+  background-color: #4696b4;
+}
+.reset-button{
+  background-color: grey;
+  padding: 10px 38px;
+}
