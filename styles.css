@@ -1,15 +1,46 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body{
   background-color: #1f2223;
   color: white;
 }
-.center-screen{
+#center-screen{
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
 }
-.js-DisplayStopwatch{
+#button-holderID{
   text-align: center;
+  margin-top: 5rem;
+}
+#articleID{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+}
+#displayWatchID{
+  width: 15rem;
+  height: 15rem;
+  border: 2px solid #4696b4;
+  border-radius: 50%; /* This makes the border completely circular */
+  display: flex;
+  justify-content: center; /* Center the text horizontally */
+  align-items: center; /* Center the text vertically */
+}
+.displayStopWatch{
+  text-align: center;
+  font-size: 4rem;
+}
+.button-holder{
+  display: inline;
+}
+.reset-holder{
+  display: inline;
 }
 .start-button,
 .resume-button,
@@ -24,14 +55,16 @@ body{
 
 .start-button{
   background-color: #4682B4;
+  
 }
 .stop-button{
  background-color: #7b1113;
 }
 .resume-button{
   background-color: #4696b4;
+  margin-right: 1.5rem;
 }
 .reset-button{
   background-color: grey;
-  padding: 10px 38px;
+  margin-left: 1.5rem;
 }

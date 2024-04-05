@@ -1,20 +1,20 @@
 //seting variables
 let watchInterval;
-const displayElement = document.querySelector('.js-DisplayStopwatch');
+const displayElement = document.querySelector('.js-displayStopWatch');
 
+//declaring object
 const stopWatch = {
   miliseconds:0,
   seconds:0,
   minutes:0
 };
 
-{/* <button class="js-stop-button">Stop</button> */}
 
 // the interval
 function playApp(){
   clearInterval(watchInterval);
   watchInterval = setInterval(()=>{
-    displayFormating();
+    
     stopWatch.miliseconds++;
     if(stopWatch.miliseconds===100){
       stopWatch.seconds++;
@@ -24,8 +24,8 @@ function playApp(){
       stopWatch.minutes++;
       stopWatch.seconds=0;
     }
-    displayElement.innerHTML = `0${stopWatch.minutes}:0${stopWatch.seconds}.0${stopWatch.miliseconds}`
-    displayFormating();
+    const formattedTime = formatTime(stopWatch);
+    displayElement.innerHTML = formattedTime;
   },10);
 };
 //stop button
@@ -40,16 +40,12 @@ function resetApp(){
   stopWatch.hours=0;
 }
 //making sure that formating is right -> 00:00.00
-function displayFormating(){
-  if(stopWatch.miliseconds >= 10){
-    displayElement.innerHTML = `0${stopWatch.minutes}:0${stopWatch.seconds}.${stopWatch.miliseconds}`
-  }
-  if(stopWatch.seconds >= 10){
-    displayElement.innerHTML = `0${stopWatch.minutes}:${stopWatch.seconds}.${stopWatch.miliseconds}`
-  }
-  if(stopWatch.minutes >= 10){
-    displayElement.innerHTML = `${stopWatch.minutes}:${stopWatch.seconds}.${stopWatch.miliseconds}`
-  }
+
+function formatTime(stopWatch) {
+  const minutesStr = stopWatch.minutes < 10 ? `0${stopWatch.minutes}` : stopWatch.minutes; // Ternary Operator
+  const secondsStr = stopWatch.seconds < 10 ? `0${stopWatch.seconds}` : stopWatch.seconds;
+  const milisecondsStr = stopWatch.miliseconds < 10 ? `0${stopWatch.miliseconds}` : stopWatch.miliseconds;
+  return `${minutesStr}:${secondsStr}.${milisecondsStr}`;
 };
 
 startButton(); //adds eventListener to start button
